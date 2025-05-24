@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from pymongo import MongoClient
 from flask_cors import CORS
-from pyton.sentiment_analysis import SentimentAnalyzer  # importa o analisador
+from sentiment_analysis import SentimentAnalyzer  # importa o analisador
 
 app = Flask(__name__)
 CORS(app)
