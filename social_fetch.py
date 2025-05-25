@@ -1,6 +1,6 @@
 import praw
-from pyton.sentiment_analysis import SentimentAnalyzer
-from pyton.config import REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USER_AGENT
+from sentiment_analysis import SentimentAnalyzer
+from config import REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USER_AGENT
 
 class RedditFetcher:
     def __init__(self):

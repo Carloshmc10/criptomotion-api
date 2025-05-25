@@ -1,15 +1,32 @@
 from flask import Flask, jsonify
 from pymongo import MongoClient
 from flask_cors import CORS
-from pyton.sentiment_analysis import SentimentAnalyzer  # importa o analisador
+from sentiment_analysis import SentimentAnalyzer  # importa o analisador
+from config import SUPPORTED_COINS
+import requests
 
 app = Flask(__name__)
 CORS(app)
 
+# Credencial errada
 client = MongoClient("mongodb://localhost:27017")
 db = client["cryptomotion"]
 
 analyzer = SentimentAnalyzer()  # instância do analisador
+
+coins =""
+for item in SUPPORTED_COINS:
+    coins += item+","
+
+
+@app.route("/api/coins")
+def get_all_coins():
+    response = requests.get("https://api.coingecko.com/api/v3/coins/markets",
+    params= {
+        "vs_currency": "brl",
+        "symbols": coins})
+    print(response.status_code)
+    return response.json()
 
 @app.route("/api/market")
 def get_market_data():

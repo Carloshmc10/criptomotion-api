@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from pyton.config import MONGODB_URI, MONGODB_DBNAME, COLLECTION_MARKETS
+from config import MONGODB_URI, MONGODB_DBNAME, COLLECTION_MARKETS
 
 class MongoDB:
     def __init__(self):

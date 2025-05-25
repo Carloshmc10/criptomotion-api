@@ -1,6 +1,6 @@
-from pyton.fetch import MarketFetcher
-from pyton.social_fetch import RedditFetcher
-from pyton.db import MongoDB
+from fetch import MarketFetcher
+from social_fetch import RedditFetcher
+from db import MongoDB
 import logging
 import argparse
 

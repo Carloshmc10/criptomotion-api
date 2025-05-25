@@ -1,6 +1,6 @@
 import requests
 import logging
-from pyton.config import COINGECKO_URL
+from config import COINGECKO_URL
 
 class MarketFetcher:
     def fetch_market_data(self):
