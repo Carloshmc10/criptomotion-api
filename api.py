@@ -14,13 +14,12 @@ db = client["cryptomotion"]
 
 analyzer = SentimentAnalyzer()  # instância do analisador
 
-coins =""
-for item in SUPPORTED_COINS:
-    coins += item+","
-
-
 @app.route("/api/coins")
 def get_all_coins():
+    coins =""
+    for item in SUPPORTED_COINS:
+        coins += item+","
+        
     response = requests.get("https://api.coingecko.com/api/v3/coins/markets",
     params= {
         "vs_currency": "brl",
